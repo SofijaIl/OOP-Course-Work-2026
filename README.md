@@ -14,6 +14,7 @@ an action by number and the program asks for the required input.
 
 ## Class Structure
 LibraryItem → Book → EBook (2 levels)
+
 LibraryItem → Magazine
 LibraryItem → Newspaper
 
@@ -45,7 +46,7 @@ LibraryItem → Newspaper
 
 
 ## How to Build
-g++ -std=c++17 *.cpp -o app
+g++ -std=c++17 -Wall -Wextra -pedantic *.cpp -o app
 
 ## How to Run
 .\app
@@ -73,26 +74,11 @@ g++ -std=c++17 *.cpp -o app
 - Display all items, members and active loans
 - Count available items
 - Interactive numbered menu — no need to edit code to use the system
+  
 
+## Criteria Meeting
 
-## Criteria Met
-
-1. **Polymorphism** — LibraryItem → Book → EBook gives two levels of inheritance.
-   Pure virtual displayInfo() is overridden in every derived class.
-2. **Separate files** — every class has its own .h and .cpp file
-3. **STL container** — std::vector<std::unique_ptr<LibraryItem>> in Library
-4. **Algorithms** — std::sort, std::find_if, std::count_if
-5. **Exceptions** — invalid input rejected in every constructor,
-   runtime errors thrown when item not found or already borrowed
-6. **Useful domain** — real library borrowing system with interactive menu
-7. **Bonus** — Utils.h defines a generic template function printAll()
-The program loads default items and members automatically, then presents
-an interactive menu. The user chooses an action by number and the program
-asks for all required input to complete it.
-
-## Criteria Mapping
-
-### 1. Polymorphism with at least two levels of inheritance and at least four separate classes
+### 1. Polymorphism with at least 2 levels of inheritance and at least 4 separate classes
 
 Implemented through this inheritance chain:
 
